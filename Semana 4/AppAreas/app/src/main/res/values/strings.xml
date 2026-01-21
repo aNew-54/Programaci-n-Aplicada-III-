@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Calculadora Geométrica</string>
+    <string name="main_title">Calculadora de Áreas y Volúmenes</string>
+    <string name="select_figure">Selecciona una figura</string>
+    <string name="calculate_button">Calcular</string>
+    <string name="mode_3d_switch">Figura en 3D</string>
+    <string name="result_area_label">Área:</string>
+    <string name="result_volume_label">Volumen:</string>
+    <string name="hint_side">Lado</string>
+    <string name="hint_width">Ancho</string>
+    <string name="hint_length">Largo</string>
+    <string name="hint_base">Base</string>
+    <string name="hint_height">Altura</string>
+    <string name="hint_radius">Radio</string>
+    <string name="hint_depth">Profundidad</string>
+    <string name="result_placeholder">0.00</string>
+    <string name="datos_faltantes">Porfavor rellene todos los campos</string>
+
+    <!-- Array para el Spinner -->
+    <string-array name="geometric_shapes">
+        <item>Cuadrado</item>
+        <item>Rectángulo</item>
+        <item>Triángulo</item>
+        <item>Círculo</item>
+    </string-array>
+</resources>

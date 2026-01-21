@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_gradient_orange">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cat Profile"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:fontFamily="sans-serif-medium"
+                    android:letterSpacing="0.05"
+                    android:layout_marginBottom="20dp" />
+
+                <!-- Diseño para mostrar la imagen del gato  -->
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <!-- Marco exterior  -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="320dp"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/bg_image_border" />
+
+                    <!-- Imagen del gato -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="320dp"
+                        android:layout_margin="12dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="8dp">
+
+                        <ImageView
+                            android:id="@+id/ivCatDetail"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:contentDescription="Cat Detail Image"
+                            android:scaleType="centerCrop" />
+
+                        <!-- Overlay sutil en la parte inferior -->
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_gravity="bottom"
+                            android:background="@drawable/gradient_overlay" />
+
+                    </androidx.cardview.widget.CardView>
+
+                </FrameLayout>
+
+                <!-- Card con información del gato -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="12dp"
+                    app:cardBackgroundColor="#FFFFFF">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="28dp">
+
+                        <!-- Nombre del gato -->
+                        <TextView
+                            android:id="@+id/tvNameDetail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="center"
+                            android:textColor="#2C3E50"
+                            android:textSize="32sp"
+                            android:textStyle="bold"
+                            android:fontFamily="sans-serif-black"
+                            android:letterSpacing="0.02"
+                            android:text="Cat Name" />
+
+                        <!-- Separador decorativo -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginBottom="20dp">
+
+                            <View
+                                android:layout_width="40dp"
+                                android:layout_height="3dp"
+                                android:background="#FF9800" />
+
+                            <View
+                                android:layout_width="8dp"
+                                android:layout_height="3dp"
+                                android:layout_marginStart="6dp"
+                                android:background="#F57C00" />
+
+                            <View
+                                android:layout_width="8dp"
+                                android:layout_height="3dp"
+                                android:layout_marginStart="6dp"
+                                android:background="#E65100" />
+
+                        </LinearLayout>
+
+                        <!-- Marco para Origen -->
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="0dp"
+                            app:cardBackgroundColor="#FFF3E0">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="16dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="ORIGIN"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold"
+                                    android:textColor="#FF9800"
+                                    android:fontFamily="sans-serif-medium"
+                                    android:letterSpacing="0.1" />
+
+                                <TextView
+                                    android:id="@+id/tvOriginDetail"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="6dp"
+                                    android:textColor="#5D6D7E"
+                                    android:textSize="16sp"
+                                    android:fontFamily="sans-serif"
+                                    android:text="Unknown" />
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <!-- Marco para Temperamento -->
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="0dp"
+                            app:cardBackgroundColor="#F3E5F5">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="16dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="TEMPERAMENT"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold"
+                                    android:textColor="#9C27B0"
+                                    android:fontFamily="sans-serif-medium"
+                                    android:letterSpacing="0.1" />
+
+                                <TextView
+                                    android:id="@+id/tvTemperamentDetail"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="6dp"
+                                    android:textColor="#5D6D7E"
+                                    android:textSize="16sp"
+                                    android:lineSpacingExtra="4dp"
+                                    android:fontFamily="sans-serif"
+                                    android:text="Friendly, Playful" />
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <View
+                            android:layout_width="60dp"
+                            android:layout_height="4dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="24dp"
+                            android:background="#FF9800"
+                            android:alpha="0.3" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- Espacio inferior -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="24dp" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

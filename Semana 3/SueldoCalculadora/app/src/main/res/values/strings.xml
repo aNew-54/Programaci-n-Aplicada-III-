@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">SueldoCalculadora</string>
+
+    <string-array name="trabajadores">
+        <item>Secretario</item>
+        <item>Obrero</item>
+        <item>Gerente</item>
+    </string-array>
+
+    <string-array name="seguros">
+        <item>AFP</item>
+        <item>ONP</item>
+    </string-array>
+</resources>

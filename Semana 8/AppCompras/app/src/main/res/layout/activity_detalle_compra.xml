@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/fondoAzulClaro"
+        tools:context=".DetalleCompra">
+
+        <Button
+            android:id="@+id/bAtras"
+            android:layout_width="88dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="@color/fondoAzul"
+            android:text="Atrás"
+            android:textSize="10sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvObsequio"
+            android:layout_width="83dp"
+            android:layout_height="66dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="12dp"
+            android:background="@android:drawable/dialog_holo_light_frame"
+            android:text="..."
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/imgObsequio"
+            app:layout_constraintTop_toBottomOf="@+id/bObsequio" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="112dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="Descuento"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/textView5"
+            app:layout_constraintTop_toBottomOf="@+id/tvPrecioElec"
+            tools:ignore="MissingConstraints" />
+
+        <CheckBox
+            android:id="@+id/cbSeguro"
+            android:layout_width="191dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="40dp"
+            android:text="Seguro por fallas técnicas (7%)"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:textStyle="italic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cbMantenimiento" />
+
+        <CheckBox
+            android:id="@+id/cbMantenimiento"
+            android:layout_width="191dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="40dp"
+            android:text="Mantenimiento trimestral (10%)"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:textStyle="italic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cbDomicilio" />
+
+        <TextView
+            android:id="@+id/tvPrecioElec"
+            android:layout_width="160dp"
+            android:layout_height="37dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:background="@android:drawable/dialog_holo_light_frame"
+            android:text="..."
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/textView6"
+            app:layout_constraintTop_toBottomOf="@+id/tvNombreElec" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="96dp"
+            android:layout_marginTop="28dp"
+            android:text="Precio:"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="Adicionales"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView6"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="Detalles"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imgProducto"
+            android:layout_width="147dp"
+            android:layout_height="182dp"
+            android:layout_marginTop="24dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.287"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            app:srcCompat="@drawable/ic_launcher_background" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="76dp"
+            android:layout_marginTop="32dp"
+            android:text="Producto:"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgProducto" />
+
+        <TextView
+            android:id="@+id/tvNombreElec"
+            android:layout_width="160dp"
+            android:layout_height="37dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:background="@android:drawable/dialog_holo_light_frame"
+            android:text="..."
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/textView3"
+            app:layout_constraintTop_toBottomOf="@+id/imgProducto" />
+
+        <CheckBox
+            android:id="@+id/cbDomicilio"
+            android:layout_width="191dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="16dp"
+            android:text="Instalación a domicilio (5%)"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:textStyle="italic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+        <RadioGroup
+            android:id="@+id/rbDescuento"
+            android:layout_width="134dp"
+            android:layout_height="143dp"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="18dp"
+            app:layout_constraintStart_toEndOf="@+id/cbSeguro"
+            app:layout_constraintTop_toBottomOf="@+id/textView7">
+
+            <RadioButton
+                android:id="@+id/radioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:tag="0.1"
+                android:text="Tarjeta de tienda (10%)"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="italic" />
+
+            <RadioButton
+                android:id="@+id/radioButton2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:tag="0.05"
+                android:text="Sin tarjeta (5%)"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="italic" />
+        </RadioGroup>
+
+        <ImageButton
+            android:id="@+id/imgObsequio"
+            android:layout_width="76dp"
+            android:layout_height="68dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="12dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bObsequio"
+            app:srcCompat="@drawable/ic_launcher_background"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <Button
+            android:id="@+id/bObsequio"
+            android:layout_width="156dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="@color/fondoAzul"
+            android:text="OBSEQUIO"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cbSeguro" />
+
+        <Button
+            android:id="@+id/bComprar"
+            android:layout_width="138dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="44dp"
+            android:backgroundTint="@color/design_default_color_error"
+            android:text="COMPRAR"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/bObsequio"
+            app:layout_constraintTop_toBottomOf="@+id/rbDescuento" />
+
+        <EditText
+            android:id="@+id/etCantidad"
+            android:layout_width="91dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="76dp"
+            android:background="@color/white"
+            android:ems="10"
+            android:hint="Cantidad"
+            android:inputType="number"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/imgProducto"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

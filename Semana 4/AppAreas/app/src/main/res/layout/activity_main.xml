@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:padding="32dp"
+    tools:context=".MainActivity">
+
+    <!-- Título de la aplicación -->
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/main_title"
+        android:textColor="@color/text_primary"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Interruptor para cambiar entre cálculo de Área (2D) y Volumen (3D) -->
+    <Switch
+        android:id="@+id/sw_3d_mode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/mode_3d_switch"
+        android:textColor="@color/text_secondary"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <!-- Espacio dedicado para mostrar la imagen de la figura seleccionada -->
+    <ImageView
+        android:id="@+id/iv_figure"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="32dp"
+        android:contentDescription="@string/select_figure"
+        android:src="@drawable/ic_launcher_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sw_3d_mode"
+        tools:srcCompat="@tools:sample/avatars" /> <!-- Placeholder, ¡reemplázalo con tus imágenes! -->
+
+    <!-- Spinner para seleccionar la figura geométrica -->
+
+    <!-- Contenedor para los campos de texto que aparecerán dinámicamente -->
+    <Spinner
+        android:id="@+id/sp_figures"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/custom_input_bg"
+        android:entries="@array/geometric_shapes"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_figure" />
+
+    <LinearLayout
+        android:id="@+id/ll_inputs_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sp_figures">
+
+        <!-- KOTLIN/JAVA LOGIC: La visibilidad de estos EditText cambiará según la figura -->
+
+        <EditText
+            android:id="@+id/et_radius"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/custom_input_bg"
+            android:hint="@string/hint_radius"
+            android:inputType="numberDecimal"
+            android:padding="12dp"
+            android:textColor="@color/text_primary"
+            android:textColorHint="@color/text_secondary"
+            android:visibility="gone"
+            tools:visibility="visible" /> <!-- tools:visibility para previsualizar en el editor -->
+
+        <EditText
+            android:id="@+id/et_side"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/custom_input_bg"
+            android:hint="@string/hint_side"
+            android:inputType="numberDecimal"
+            android:padding="12dp"
+            android:textColor="@color/text_primary"
+            android:textColorHint="@color/text_secondary"
+            android:visibility="gone" />
+
+        <!-- Contenedor para figuras con dos parámetros (ancho/largo o base/altura) -->
+        <LinearLayout
+            android:id="@+id/ll_two_params"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <EditText
+                android:id="@+id/et_param1"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/custom_input_bg"
+                android:hint="@string/hint_width"
+                android:inputType="numberDecimal"
+                android:padding="12dp"
+                android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_secondary" />
+
+            <EditText
+                android:id="@+id/et_param2"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/custom_input_bg"
+                android:hint="@string/hint_length"
+                android:inputType="numberDecimal"
+                android:padding="12dp"
+                android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_secondary" />
+        </LinearLayout>
+
+        <!-- Campo para la profundidad/altura en modo 3D. Controlado por el Switch -->
+        <EditText
+            android:id="@+id/et_depth"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/custom_input_bg"
+            android:hint="@string/hint_depth"
+            android:inputType="numberDecimal"
+            android:padding="12dp"
+            android:textColor="@color/text_primary"
+            android:textColorHint="@color/text_secondary"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+    </LinearLayout>
+
+    <!-- Botón para ejecutar el cálculo -->
+    <Button
+        android:id="@+id/b_calculate"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/accent"
+        android:text="@string/calculate_button"
+        android:textColor="@color/background"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_inputs_container" />
+
+    <!-- Sección de Resultados -->
+    <TextView
+        android:id="@+id/tv_result_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/result_area_label"
+        android:textColor="@color/text_secondary"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/tv_result_value"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/b_calculate" />
+
+    <TextView
+        android:id="@+id/tv_result_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:text="@string/result_placeholder"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@id/tv_result_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_result_label" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

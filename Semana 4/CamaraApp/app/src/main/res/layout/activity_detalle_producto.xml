@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".DetalleProducto">
+
+        <ImageView
+            android:id="@+id/iv_DetalleProducto"
+            android:layout_width="334dp"
+            android:layout_height="147dp"
+            android:layout_marginTop="81dp"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_launcher_background" />
+
+        <TextView
+            android:id="@+id/tv_Nombre"
+            android:layout_width="293dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="48dp"
+            android:text="Nombre"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_DetalleProducto" />
+
+        <TextView
+            android:id="@+id/tv_Precio"
+            android:layout_width="295dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="20dp"
+            android:text="Precio"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.524"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_Nombre" />
+
+        <RatingBar
+            android:id="@+id/rb_det_Calificacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="34dp"
+            android:isIndicator="true"
+            android:progressTint="#FFEB3B"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_Precio" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
