@@ -23,6 +23,15 @@ public class LugarAdapter extends RecyclerView.Adapter<LugarAdapter.LugarAdapter
         this.vmLugar = vmLugar;
         inflate = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
+    private OnLugarClickListener onLugarClickListener;
+
+    public interface OnLugarClickListener{
+        void onLugarClick(Lugar lugar);
+    }
+
+    public void setOnLugarClickListener(OnLugarClickListener onLugarClickListener){
+        this.onLugarClickListener = onLugarClickListener;
+    }
 
 
     @NonNull
@@ -41,7 +50,13 @@ public class LugarAdapter extends RecyclerView.Adapter<LugarAdapter.LugarAdapter
         holder.tvTiempo.setText(lugar.getTiempo() + "mins");
         holder.tvValor.setText(String.valueOf(lugar.getValoracion()));
         holder.ivLugar.setImageDrawable(ContextCompat.getDrawable(context, lugar.getImageId()));
+        holder.ivLugar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onLugarClickListener.onLugarClick(lugar);
 
+            }
+        });
     }
 
     @Override
