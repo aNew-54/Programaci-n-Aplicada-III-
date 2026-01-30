@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="colorPrimary">#68AFA9</color>
+    <color name="colorPrimaryVariant">#195752</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+
+    <color name="colorSecondary">#F6B843</color>
+    <color name="colorSecondaryVariant">#CFA150</color>
+    <color name="colorOnSecondary">#000000</color>
+
+    <color name="colorShadow">#ADB6B6</color>
+    <color name="activityBackground">#FAFAFA</color>
+</resources>

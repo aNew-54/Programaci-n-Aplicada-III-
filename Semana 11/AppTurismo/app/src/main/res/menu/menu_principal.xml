@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/im_lugar"
+        android:title="Lugares Turísticos" />
+    <item
+        android:id="@+id/im_mantenimiento"
+        android:title="Mantenimiento" >
+        <menu >
+            <item
+                android:id="@+id/im_agregar"
+                android:title="Agregar Lugar" />
+            <item
+                android:id="@+id/im_infoLugar"
+                android:title="Información Lugar" />
+        </menu>
+    </item>
+    <item
+        android:id="@+id/im_salir"
+        android:title="Salir" />
+</menu>
