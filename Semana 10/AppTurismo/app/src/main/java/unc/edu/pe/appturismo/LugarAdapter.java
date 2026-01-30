@@ -7,32 +7,31 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import Model.Lugar;
-import ViewModel.VMLugar;
-
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
+
+import Model.Lugar;
+import ViewModel.VMLugar;
 public class LugarAdapter extends RecyclerView.Adapter<LugarAdapter.LugarAdapterViewHolder> {
     private Context context;
     private VMLugar vmLugar;
-    private static LayoutInflater inflate =null;
 
-    public LugarAdapter(Context context,  VMLugar vmLugar){
-        this.context = context;
-        this.vmLugar = vmLugar;
-        inflate = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-    }
+    //Interface para escuchar los eventos en el recyclerView (Click sobre algún item)
     private OnLugarClickListener onLugarClickListener;
-
     public interface OnLugarClickListener{
         void onLugarClick(Lugar lugar);
     }
 
-    public void setOnLugarClickListener(OnLugarClickListener onLugarClickListener){
-        this.onLugarClickListener = onLugarClickListener;
+    public LugarAdapter(Context context,  VMLugar vmLugar){
+        this.context = context;
+        this.vmLugar = vmLugar;
     }
 
+    //Constructor del Listener
+    public void setOnLugarClickListener(OnLugarClickListener onLugarClickListener) {
+        this.onLugarClickListener = onLugarClickListener;
+    }
 
     @NonNull
     @Override
@@ -49,7 +48,7 @@ public class LugarAdapter extends RecyclerView.Adapter<LugarAdapter.LugarAdapter
         holder.tvCiudad.setText(lugar.getCiudad());
         holder.tvTiempo.setText(lugar.getTiempo() + "mins");
         holder.tvValor.setText(String.valueOf(lugar.getValoracion()));
-        holder.ivLugar.setImageDrawable(ContextCompat.getDrawable(context, lugar.getImageId()));
+        holder.ivLugar.setImageURI(lugar.getImageId());
         holder.ivLugar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,7 +63,7 @@ public class LugarAdapter extends RecyclerView.Adapter<LugarAdapter.LugarAdapter
         return vmLugar.listarLugares().size();
     }
 
-    public class LugarAdapterViewHolder  extends RecyclerView.ViewHolder{
+    public class LugarAdapterViewHolder extends RecyclerView.ViewHolder{
         TextView tvNombre, tvCiudad, tvTiempo, tvValor;
         ImageView ivLugar;
         public LugarAdapterViewHolder(@NonNull View itemView) {
@@ -77,4 +76,6 @@ public class LugarAdapter extends RecyclerView.Adapter<LugarAdapter.LugarAdapter
 
         }
     }
+
+
 }

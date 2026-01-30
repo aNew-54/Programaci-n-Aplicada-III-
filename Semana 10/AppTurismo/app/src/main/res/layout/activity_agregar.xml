@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".AgregarActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:elevation="4dp"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:titleTextColor="@android:color/white" />
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_registrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="Registrar Lugar"
+            android:src="@drawable/outline_add_24"
+            app:elevation="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Agregar Lugar Turístico"
+            android:theme="@style/Titulos"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+
+        <EditText
+            android:id="@+id/et_nombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="92dp"
+            android:layout_marginTop="36dp"
+            android:ems="10"
+            android:hint="Ingrese nombre"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+
+        <EditText
+            android:id="@+id/et_descripcion"
+            android:layout_width="275dp"
+            android:layout_height="85dp"
+            android:layout_marginStart="92dp"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="Ingrese descripción"
+            android:inputType="textMultiLine"
+            android:minHeight="48dp"
+            android:scrollbars="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sp_ciudad" />
+
+
+        <RatingBar
+            android:id="@+id/rb_valor"
+            android:layout_width="wrap_content"
+            android:layout_height="46dp"
+            android:layout_marginTop="36dp"
+            android:isIndicator="false"
+            android:numStars="5"
+            android:stepSize="0.5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.538"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_distancia" />
+
+
+        <ImageView
+            android:id="@+id/iv_lugarAgregar"
+            android:layout_width="147dp"
+            android:layout_height="129dp"
+            android:layout_marginTop="20dp"
+            android:contentDescription="Seleccionar imagen lugar turístico"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rb_valor"
+            app:srcCompat="@drawable/subir_image" />
+
+
+        <Spinner
+            android:id="@+id/sp_ciudad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="92dp"
+            android:layout_marginTop="20dp"
+            android:minHeight="48dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_nombre" />
+
+
+        <EditText
+            android:id="@+id/et_distancia"
+            android:layout_width="135dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="92dp"
+            android:layout_marginTop="16dp"
+            android:hint="Distancia (Km)"
+            android:inputType="numberDecimal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_descripcion" />
+
+
+        <EditText
+            android:id="@+id/et_tiempo"
+            android:layout_width="121dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:hint="Tiempo (hrs)"
+            android:inputType="numberDecimal"
+            app:layout_constraintStart_toEndOf="@+id/et_distancia"
+            app:layout_constraintTop_toBottomOf="@+id/et_descripcion" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

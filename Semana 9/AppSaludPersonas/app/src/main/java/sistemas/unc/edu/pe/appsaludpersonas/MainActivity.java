@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity implements MyBottomSheet.OnP
             MyBottomSheet bottomSheet = new MyBottomSheet();
             bottomSheet.show(getSupportFragmentManager(), "ModalBottomSheet");
         });
+
     }
 
     @Override

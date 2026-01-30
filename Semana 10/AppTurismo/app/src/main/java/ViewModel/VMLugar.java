@@ -13,4 +13,8 @@ public class VMLugar {
     public Lugar getLugar(int i){
         return listaLugares.get(i);
     }
+
+    public void addLugar(Lugar lugar) {
+        listaLugares.add(lugar);
+    }
 }

@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppTurismo">
         <activity
+            android:name=".AgregarActivity"
+            android:exported="false" />
+        <activity
             android:name=".GaleriaActivity"
             android:exported="false" />
         <activity

@@ -1,20 +1,32 @@
-
 package Model;
 
+import android.net.Uri;
 import android.os.Parcel;
 import android.os.Parcelable;
 
 import androidx.annotation.NonNull;
 
-public class Lugar implements Parcelable {
+public class Lugar implements Parcelable{
     private String Nombre;
     private String Ciudad;
     private String Descripcion;
     private double distancia;
     private double tiempo;
     private float valoracion;
-    private int imageId;
-    private int imageId2;
+    private Uri imageId;
+    private Uri imageId2;
+
+    // Constructor
+    public Lugar(String Nombre, String Ciudad, String Descripcion, double distancia, double tiempo, float valoracion, Uri imageId, Uri imageId2) {
+        this.Nombre = Nombre;
+        this.Ciudad = Ciudad;
+        this.Descripcion = Descripcion;
+        this.distancia = distancia;
+        this.tiempo = tiempo;
+        this.valoracion = valoracion;
+        this.imageId = imageId;
+        this.imageId2 = imageId2;
+    }
 
     protected Lugar(Parcel in) {
         Nombre = in.readString();
@@ -23,8 +35,8 @@ public class Lugar implements Parcelable {
         distancia = in.readDouble();
         tiempo = in.readDouble();
         valoracion = in.readFloat();
-        imageId = in.readInt();
-        imageId2 = in.readInt();
+        imageId = in.readParcelable(Uri.class.getClassLoader());
+        imageId2 = in.readParcelable(Uri.class.getClassLoader());
     }
 
     public static final Creator<Lugar> CREATOR = new Creator<Lugar>() {
@@ -39,6 +51,39 @@ public class Lugar implements Parcelable {
         }
     };
 
+    // Getters
+    public String getNombre() {
+        return Nombre;
+    }
+
+    public String getCiudad() {
+        return Ciudad;
+    }
+
+    public String getDescripcion() {
+        return Descripcion;
+    }
+
+    public double getDistancia() {
+        return distancia;
+    }
+
+    public double getTiempo() {
+        return tiempo;
+    }
+
+    public float getValoracion() {
+        return valoracion;
+    }
+
+    public Uri getImageId() {
+        return imageId;
+    }
+
+    public Uri getImageId2() {
+        return imageId2;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -52,90 +97,7 @@ public class Lugar implements Parcelable {
         dest.writeDouble(distancia);
         dest.writeDouble(tiempo);
         dest.writeFloat(valoracion);
-        dest.writeInt(imageId);
-        dest.writeInt(imageId2);
+        dest.writeParcelable(imageId, flags);
+        dest.writeParcelable(imageId2, flags);
     }
-
-    public String getNombre() {
-        return Nombre;
-    }
-
-    public void setNombre(String nombre) {
-        Nombre = nombre;
-    }
-
-    public String getCiudad() {
-        return Ciudad;
-    }
-
-    public void setCiudad(String ciudad) {
-        Ciudad = ciudad;
-    }
-
-    public String getDescripcion() {
-        return Descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        Descripcion = descripcion;
-    }
-
-    public double getDistancia() {
-        return distancia;
-    }
-
-    public void setDistancia(double distancia) {
-        this.distancia = distancia;
-    }
-
-    public double getTiempo() {
-        return tiempo;
-    }
-
-    public void setTiempo(double tiempo) {
-        this.tiempo = tiempo;
-    }
-
-    public float getValoracion() {
-        return valoracion;
-    }
-
-    public void setValoracion(float valoracion) {
-        this.valoracion = valoracion;
-    }
-
-    public int getImageId() {
-        return imageId;
-    }
-
-    public void setImageId(int imageId) {
-        this.imageId = imageId;
-    }
-
-    public int getImageId2() {
-        return imageId2;
-    }
-
-    public void setImageId2(int imageId2) {
-        this.imageId2 = imageId2;
-    }
-
-    public Lugar(String nombre, String ciudad, String descripcion, double distancia, double tiempo, float valoracion, int imageId, int imageId2) {
-        Nombre = nombre;
-        Ciudad = ciudad;
-        Descripcion = descripcion;
-        this.distancia = distancia;
-        this.tiempo = tiempo;
-        this.valoracion = valoracion;
-        this.imageId = imageId;
-        this.imageId2 = imageId2;
-    }
-    public Lugar(String nombre, String ciudad, String descripcion, double distancia, double tiempo, float valoracion, int imageId) {
-        Nombre = nombre;
-        Ciudad = ciudad;
-        Descripcion = descripcion;
-        this.distancia = distancia;
-        this.tiempo = tiempo;
-        this.valoracion = valoracion;
-        this.imageId = imageId;
-    }}
+}
